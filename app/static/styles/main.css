@@ -1,0 +1,38 @@
+p, h1, h2, h3, h4, h5, h6, button {
+    font-family: "Roboto", serif;
+}
+
+body {
+    background-color: #B2FFFF;
+    background-size: cover;
+    width: auto; 
+    overflow-x: hidden;
+    font-family: "Roboto", serif;
+    margin: 0px;
+}
+
+.nav-bar {
+    text-align: center;
+    width: 100%;
+    display: inline-block;
+    background-color: #B2FFFF;
+    font-family: "Roboto", serif;
+    font-weight: 700 !important;
+    padding-top: 10px;
+}
+
+footer {
+    text-align: center;
+}
+
+section {
+    /* text-align: center; */
+    border-color: black;
+    border-style: solid;
+    background-color: white;
+    margin: 7rem 7rem 7rem 7rem;
+}
+
+form {
+    margin: 3em 3em 3em 3em;
+}
