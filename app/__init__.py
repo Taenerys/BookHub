@@ -10,8 +10,8 @@ db.init_app(app)
 
 
 @app.route("/")
-def index():
-    return render_template("index.html", title="Book Hub", url="localhost:5000")
+def home():
+    return render_template("home.html", title="Book Hub", url="localhost:5000")
 
 
 @app.route("/create")
