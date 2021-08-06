@@ -1,4 +1,6 @@
-{% extends 'index.html' %} {% block content %}
+{% extends 'index.html' %} 
+
+{% block content %}
 <h1 style="text-align: center">Read, Write, and Connect</h1>
 
 <div class="buttonContainer">
@@ -12,8 +14,8 @@
   <div class="row">
     <div class="column">
       <img
-        src="{{ url_for('static', filename='images/book1.jpeg')}}"
-        alt="book1"
+        src="{{ url_for('static', filename='images/book1.jpeg') }}"
+        alt="{{ book1 }}"
         style="width: 33.3%"
       />
     </div>
