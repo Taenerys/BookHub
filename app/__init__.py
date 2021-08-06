@@ -16,7 +16,9 @@ def home():
     # for book in books:
     #     book['img'] = send_file(book['img'], book['img_mimetype'])
     #     print(book['img'])
-    return render_template("home.html", title="Book Hub", url="localhost:5000", books=books)
+    return render_template(
+        "home.html", title="Book Hub", url="localhost:5000", books=books
+    )
 
 
 @app.route("/create")
@@ -79,7 +81,12 @@ def upload():
             return error, 418
     return "Submit action done!", 200
 
+
 def get_books():
-    rows = get_db().execute("SELECT title, author, img, img_name, img_mimetype, notes FROM books").fetchall()
+    rows = (
+        get_db()
+        .execute("SELECT title, author, img, img_name, img_mimetype, notes FROM books")
+        .fetchall()
+    )
     books = [dict(row) for row in rows]
     return books
