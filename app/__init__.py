@@ -18,6 +18,7 @@ def home():
 def create_thoughts():
     return render_template("create-thought.html")
 
+
 @app.route("/upload", methods=("GET", "POST"))
 def upload():
     if request.method == "POST":
@@ -57,7 +58,15 @@ def upload():
         if error is None:
             db.execute(
                 "INSERT INTO books (title, author, image, date_added, image_name, image_mimetype, notes) VALUES (?, ?, ?, ?, ?, ?, ?)",
-                (book_title, book_author, date_added, book_image.read(), book_image_name, book_image_mimetype, book_notes),
+                (
+                    book_title,
+                    book_author,
+                    date_added,
+                    book_image.read(),
+                    book_image_name,
+                    book_image_mimetype,
+                    book_notes,
+                ),
             )
             db.commit()
             return f"Book {book_title} added successfully"
