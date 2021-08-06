@@ -72,4 +72,4 @@ def upload():
             return f"Book {book_title} added successfully"
         else:
             return error, 418
-    return "Submit action done!", 200
+    return render_template("upload.html", title="Upload new book", url=os.getenv("URL"))
