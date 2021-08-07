@@ -80,7 +80,7 @@ def upload():
         else:
             return error, 418
     return render_template("upload.html", title="Upload new book", url=os.getenv("URL"))
-   
+
 
 def get_books():
     rows = (
