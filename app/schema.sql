@@ -4,8 +4,8 @@ CREATE TABLE books (
     title TEXT NOT NULL,
     author TEXT NOT NULL,
     date_added DATE NOT NULL,
-    image TEXT NOT NULL,
-    image_name TEXT NOT NULL,
-    image_mimetype TEXT NOT NULL,
+    img TEXT NOT NULL,
+    img_name TEXT NOT NULL,
+    img_mimetype TEXT NOT NULL,
     notes TEXT NOT NULL
 );
