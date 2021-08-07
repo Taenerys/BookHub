@@ -11,7 +11,14 @@ db.init_app(app)
 
 @app.route("/")
 def home():
-    return render_template("home.html", title="Book Hub", url="localhost:5000")
+    books = get_books()
+    # TODO: Pass actual image to get it displayed - perhaps needs to do research
+    # for book in books:
+    #     book['img'] = send_file(book['img'], book['img_mimetype'])
+    #     print(book['img'])
+    return render_template(
+        "home.html", title="Book Hub", url="localhost:5000", books=books
+    )
 
 
 @app.route("/create")
@@ -57,7 +64,7 @@ def upload():
         # if there is no error, add to database and return successful code
         if error is None:
             db.execute(
-                "INSERT INTO books (title, author, image, date_added, image_name, image_mimetype, notes) VALUES (?, ?, ?, ?, ?, ?, ?)",
+                "INSERT INTO books (title, author, img, date_added, img_name, img_mimetype, notes) VALUES (?, ?, ?, ?, ?, ?, ?)",
                 (
                     book_title,
                     book_author,
@@ -73,3 +80,13 @@ def upload():
         else:
             return error, 418
     return render_template("upload.html", title="Upload new book", url=os.getenv("URL"))
+   
+
+def get_books():
+    rows = (
+        get_db()
+        .execute("SELECT title, author, img, img_name, img_mimetype, notes FROM books")
+        .fetchall()
+    )
+    books = [dict(row) for row in rows]
+    return books
