@@ -7,6 +7,8 @@ tag_book = db.Table(
     db.Column("tag_id", db.Integer, db.ForeignKey("tag.id"), primary_key=True),
     db.Column("book_id", db.Integer, db.ForeignKey("book.id"), primary_key=True),
 )
+
+
 class Book(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(10000), nullable=False)
@@ -20,9 +22,13 @@ class Book(db.Model):
         secondary=tag_book,
         backref=db.backref("books_associated", lazy="dynamic"),
     )
+
+
 class Tag(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(30))
+
+
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(150), unique=True, nullable=False)
