@@ -1,92 +1,31 @@
-import os
-from flask import Flask, request, render_template, send_file
-from . import db
-from app.db import get_db
-from werkzeug.utils import secure_filename
+from os import path
+from flask import Flask, request, render_template, flash, url_for, redirect
+from flask_sqlalchemy import SQLAlchemy
 
-app = Flask(__name__)
-app.config["DATABASE"] = os.path.join(os.getcwd(), "flask.sqlite")
-db.init_app(app)
+db = SQLAlchemy()
+DB_NAME = "database.db"
 
 
-@app.route("/")
-def home():
-    books = get_books()
-    # TODO: Pass actual image to get it displayed - perhaps needs to do research
-    # for book in books:
-    #     book['img'] = send_file(book['img'], book['img_mimetype'])
-    #     print(book['img'])
-    return render_template(
-        "home.html", title="Book Hub", url="localhost:5000", books=books
-    )
+def create_app():
+    # TODO: will store this key safely later & change it!
+    app = Flask(__name__)
+    app.config['SECRET_KEY'] = 'secret_key_for_now_secret_key'
+    app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
+    db.init_app(app)
 
+    from .views import views
+    from .auth import auth
 
-@app.route("/create")
-def create_thoughts():
-    return render_template("create-thought.html")
+    app.register_blueprint(views, url_prefix='/')
+    app.register_blueprint(auth, url_prefix='/auth/')
 
+    from .models import User, Book, Tag
 
-@app.route("/upload", methods=("GET", "POST"))
-def upload():
-    if request.method == "POST":
-        # get the user input from Create form
-        book_title = request.form.get("book_name")
-        book_author = request.form.get("book_author")
-        date_added = request.form.get("date_added")
-        book_image = request.files.get("book_image")
-        book_notes = request.form.get("book_notes")
+    create_database(app)
 
-        # manipulate book image data
-        # file name of the image
-        book_image_name = secure_filename(book_image.filename)
-        # type of the image (e.g: jpeg, png)
-        book_image_mimetype = book_image.mimetype
+    return app
 
-        db = get_db()
-        error = None
-
-        # error checking
-        if not book_title:
-            error = "Book title is required"
-        elif not book_author:
-            error = "Book author is required"
-        elif not date_added:
-            error = "Date added is required"
-        elif not book_image:
-            error = "Book image is required"
-        elif not book_image_name:
-            error = "Bad upload - filename"
-        elif not book_image_mimetype:
-            error = "Bad upload - mimetype"
-        elif not book_notes:
-            error = "Book notes is required"
-
-        # if there is no error, add to database and return successful code
-        if error is None:
-            db.execute(
-                "INSERT INTO books (title, author, img, date_added, img_name, img_mimetype, notes) VALUES (?, ?, ?, ?, ?, ?, ?)",
-                (
-                    book_title,
-                    book_author,
-                    date_added,
-                    book_image.read(),
-                    book_image_name,
-                    book_image_mimetype,
-                    book_notes,
-                ),
-            )
-            db.commit()
-            return f"Book {book_title} added successfully"
-        else:
-            return error, 418
-    return render_template("upload.html", title="Upload new book", url=os.getenv("URL"))
-
-
-def get_books():
-    rows = (
-        get_db()
-        .execute("SELECT title, author, img, img_name, img_mimetype, notes FROM books")
-        .fetchall()
-    )
-    books = [dict(row) for row in rows]
-    return books
+def create_database(app):
+    if not path.exists('app' + DB_NAME):
+        db.create_all(app=app)
+        print('Database Created!')
