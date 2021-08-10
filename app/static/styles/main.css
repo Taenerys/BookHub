@@ -1,0 +1,75 @@
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button {
+  font-family: "Roboto", serif;
+}
+
+body {
+  background-color: #b2ffff;
+  background-size: cover;
+  width: auto;
+  overflow-x: hidden;
+  font-family: "Roboto", serif;
+  margin: 0px;
+}
+
+.nav-bar {
+  text-align: center;
+  width: 100%;
+  display: inline-block;
+  background-color: #b2ffff;
+  font-family: "Roboto", serif;
+  font-weight: 700 !important;
+  padding-top: 10px;
+}
+
+footer {
+  text-align: center;
+}
+
+section {
+  /* text-align: center; */
+  border-color: black;
+  border-style: solid;
+  background-color: white;
+  margin: 7rem 7rem 7rem 7rem;
+}
+
+form {
+  margin: 3em 3em 3em 3em;
+}
+
+.bookContainer {
+  margin: 6%;
+  border-width: 3px;
+  border-style: solid;
+  border-color: black;
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+}
+
+.buttonContainer {
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+  float: left;
+  width: 33.3%;
+  padding: 5px;
+}
+
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
