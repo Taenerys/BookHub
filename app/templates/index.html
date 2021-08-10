@@ -30,18 +30,21 @@
     </header>
 
     <ul class="nav justify-content-center">
-        <li class="nav-item">
-            <a class="nav-link active" href="/auth/login">Log In</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="/auth/sign-up">Sign Up</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="auth/log-out">Log Out</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="/">Home</a>
-        </li>
+        {% if user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link" href="/auth/log-out">Log Out</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+            </li>
+        {% else %}
+            <li class="nav-item">
+                <a class="nav-link" href="/auth/login">Log In</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/auth/sign-up">Sign Up</a>
+            </li>
+        {% endif %}
     </ul>
 
     <!-- Show the flash message -->
