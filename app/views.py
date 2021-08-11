@@ -14,6 +14,7 @@ views = Blueprint("views", __name__)
 def health_check():
     return "This works!"
 
+
 @views.route("/")
 @login_required
 def home():
