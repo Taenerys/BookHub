@@ -9,6 +9,10 @@ from werkzeug.utils import secure_filename
 
 views = Blueprint("views", __name__)
 
+# add health endpoint for testing and monitoring
+@views.route("/health")
+def health_check():
+    return "This works!"
 
 @views.route("/")
 @login_required
