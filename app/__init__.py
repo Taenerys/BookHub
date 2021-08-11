@@ -1,3 +1,4 @@
+import os
 from os import path
 from flask import Flask, request, render_template, flash, url_for, redirect
 from flask_sqlalchemy import SQLAlchemy
@@ -10,8 +11,9 @@ DB_NAME = "database.db"
 def create_app():
     # TODO: will store this key safely later & change it!
     app = Flask(__name__)
-    app.config["SECRET_KEY"] = "secret_key_for_now_secret_key"
+    app.config["SECRET_KEY"] = "development_key"
     app.config["SQLALCHEMY_DATABASE_URI"] = f"sqlite:///{DB_NAME}"
+    app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
     db.init_app(app)
 
     from .views import views

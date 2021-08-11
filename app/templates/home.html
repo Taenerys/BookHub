@@ -9,18 +9,19 @@
 
 <h3 style="text-align: center">Discover Books Below!</h3>
 
+<!-- TODO: Make this page look better -->
+
 <div class="bookContainer">
   <div class="row">
     {% for book in books %}
       <div class="column">
         <img
-          src="{{ url_for('static', filename='images/book1.jpeg') }}"
-          alt="{{ book['img_name'] }}"
+          src="{{ './static/images/' + book.img_name }}"
+          alt="{{ book.img_name }}"
           style="width: 33.3%"
         />
-        <!-- this p below is to debug since we only have placeholder image for now -->
         <p>
-          {{ book['title'] }}
+          {{ book.title }}
         </p>
       </div>
     {% endfor %}
