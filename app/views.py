@@ -24,3 +24,13 @@ def home():
 @views.route("/create")
 def create_thoughts():
     return render_template("create-thought.html", user=current_user)
+
+
+@views.route("/success")
+def success():
+    return render_template("success.html", user=current_user)
+
+
+@views.route("/upload")
+def upload():
+    return render_template("upload.html", user=current_user)
