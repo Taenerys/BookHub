@@ -8,27 +8,27 @@
 <section>
     <form action="/upload" enctype="multipart/form-data" method="POST">
         <div class="form-group">
-            <label for="book_name">Book Title</label>
-            <input type="text" class="form-control" name="book_name" id="book_name" aria-describedby="bookName"
+            <label for="title">Book Title</label>
+            <input type="text" class="form-control" name="title" id="title" aria-describedby="title"
                 placeholder="Enter book title">
         </div>
         <div class="form-group">
-            <label for="book_author">Author</label>
-            <input type="text" class="form-control" name="book_author" id="book_author" aria-describedby="bookAuthor"
+            <label for="author">Author</label>
+            <input type="text" class="form-control" name="author" id="author" aria-describedby="author"
                 placeholder="Enter book author">
         </div>
         <div class="form-group">
-            <label for="date_added">Date Added</label>
-            <input type="date" class="form-control" name="date_added" id="date_added" aria-describedby="dateAdded"
-                placeholder="Enter the date you added this book">
+            <label for="tags">Tags</label>
+            <input type="text" class="form-control" name="tags" id="tags" aria-describedby="tags"
+                placeholder="Enter tags, separated by commas.">
         </div>
         <div class="form-group">
-            <label for="book_image">Book Cover</label>
-            <input type="file" class="form-control" name="book_image" id="book_image" aria-describedby="bookCover" />
+            <label for="img">Book Cover</label>
+            <input type="file" class="form-control" name="img" id="img" aria-describedby="bookCover" />
         </div>
         <div class="form-group">
-            <label for="book_notes">Thoughts</label>
-            <textarea class="form-control" name="book_notes" id="book_notes" rows="3"
+            <label for="notes">Thoughts</label>
+            <textarea class="form-control" name="notes" id="notes" rows="3"
                 placeholder="How does this book speak to your heart?"></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>

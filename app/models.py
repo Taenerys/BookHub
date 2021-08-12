@@ -15,6 +15,8 @@ class Book(db.Model):
     author = db.Column(db.String(10000), nullable=False)
     date_added = db.Column(db.DateTime, default=datetime.utcnow)
     img = db.Column(db.String, nullable=False)
+    img_name = db.Column(db.String, nullable=False)
+    img_mimetype = db.Column(db.String, nullable=False)
     notes = db.Column(db.String(10000), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
     tags = db.relationship(
