@@ -70,5 +70,6 @@ def signup():
             flash("Account created!", category="success")
 
             # TODO: fix this redirect to make the user flow more natural ??
-            return redirect(url_for("views.home"))
+            # return redirect(url_for("views.home"))
+            return redirect("/auth/login")
     return render_template("sign-up.html", user=current_user)

@@ -1,11 +1,7 @@
-{% extends 'index.html' %} 
+{% extends 'index.html' %}
 
 {% block content %}
 <h1 style="text-align: center">Read, Write, and Connect</h1>
-
-<div class="buttonContainer">
-  <a href="/create">Start Writing</a>
-</div>
 
 <h3 style="text-align: center">Discover Books Below!</h3>
 
@@ -14,16 +10,12 @@
 <div class="bookContainer">
   <div class="row">
     {% for book in books %}
-      <div class="column">
-        <img
-          src="{{ './static/images/' + book.img_name }}"
-          alt="{{ book.img_name }}"
-          style="width: 33.3%"
-        />
-        <p>
-          {{ book.title }}
-        </p>
-      </div>
+    <div class="column">
+      <img src="{{ './static/images/' + book.img_name }}" alt="{{ book.img_name }}" style="width: 33.3%" />
+      <p>
+        {{ book.title }}
+      </p>
+    </div>
     {% endfor %}
   </div>
 </div>
