@@ -3,6 +3,7 @@ from os import path
 from flask import Flask, request, render_template, flash, url_for, redirect
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
+
 # from flask_migrate import Migrate
 
 db = SQLAlchemy()
@@ -14,12 +15,14 @@ def create_app():
     app = Flask(__name__)
     app.config["SECRET_KEY"] = "development_key"
     # app.config["SQLALCHEMY_DATABASE_URI"] = f"sqlite:///{DB_NAME}"
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://{user}:{passwd}@{host}:{port}/{table}'.format(
-        user=os.getenv('POSTGRES_USER'),
-        passwd=os.getenv('POSTGRES_PASSWORD'),
-        host=os.getenv('POSTGRES_HOST'),
+    app.config[
+        "SQLALCHEMY_DATABASE_URI"
+    ] = "postgresql+psycopg2://{user}:{passwd}@{host}:{port}/{table}".format(
+        user=os.getenv("POSTGRES_USER"),
+        passwd=os.getenv("POSTGRES_PASSWORD"),
+        host=os.getenv("POSTGRES_HOST"),
         port=5432,
-        table=os.getenv('POSTGRES_DB')
+        table=os.getenv("POSTGRES_DB"),
     )
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
     db.init_app(app)
