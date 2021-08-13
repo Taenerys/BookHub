@@ -39,7 +39,6 @@ def create_thoughts():
     return render_template("create-thought.html", user=current_user)
 
 
-# temporary endpoint just so we can see what the success page looks like
 @views.route("/success")
 def success():
     return render_template("success.html", user=current_user)
@@ -110,6 +109,13 @@ def get_books():
 
 
 # TODO: Fucntion to get an individual book to display the detail for each
+@views.route("/<int:id>")
+def get_book(id):
+    curr_book = Book.query.filter_by(id=id).first()
+    if not curr_book:
+        return "book not found"
+    return render_template("book-details.html", book=curr_book, user=current_user)
+
 
 # TODO: Function to delete book
 

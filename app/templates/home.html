@@ -1,4 +1,4 @@
-{% extends 'index.html' %} 
+{% extends 'index.html' %}
 
 {% block content %}
 <h1 style="text-align: center">Read, Write, and Connect</h1>
@@ -14,16 +14,14 @@
 <div class="bookContainer">
   <div class="row">
     {% for book in books %}
-      <div class="column">
-        <img
-          src="{{ './static/images/' + book.img_name }}"
-          alt="{{ book.img_name }}"
-          style="width: 33.3%"
-        />
-        <p>
-          {{ book.title }}
-        </p>
-      </div>
+    <div class="column">
+      <a href="/{{ book.id }}">
+        <img style=" width: 33.3%" alt="{{ book.img_name }}" src="{{ './static/images/' + book.img_name }}">
+      </a>
+      <p>
+        {{ book.title }}
+      </p>
+    </div>
     {% endfor %}
   </div>
 </div>
