@@ -4,9 +4,11 @@ __pycache__/
 *$py.class
 *.pyc
 python3-virtualenv
+bookhub-virtual
 
 # C extensions
 *.so
+*.DS_Store
 
 # Distribution / packaging
 .Python
