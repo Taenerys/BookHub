@@ -1,9 +1,18 @@
 {% extends 'index.html' %}
 
 {% block content %}
-<div>book details here</div>
-<p>{{ book.title }}</p>
-<p>{{ book.author }}</p>
+<div style="text-align: center" class="bookContainer">
+    <h1>{{ book.title }}</h1>
+    <br>
+    <div style="text-align: center">
+        <img style=width:33.3% alt="{{ book.img_name }}" src="{{ './static/images/' + book.img_name }}">
+    </div>
+    <br>
+    <br>
+    <h5>Author: {{ book.author }}</h5>
+    <h5>Tags: {{ book.tags }}</h5>
+    <h5>Notes: {{ book.notes }}</h5>
 
+</div>
 
 {% endblock %}
