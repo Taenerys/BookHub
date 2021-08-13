@@ -8,4 +8,12 @@ services:
     env_file:
       - .env
     volumes:
-      - ./database.db:/bookhub/database.db
+      - .:/bookhub
+    depends_on:
+      - db
+
+  db:
+    image: postgres
+    restart: always
+    env_file:
+      - .env
