@@ -1,5 +1,12 @@
-# BookHub
+# Welcome to Book Hub! # 
+(To contribute to this repo, refer to `CONTRIBUTING.md` file.)
 
-Spike2 - MLH Production Engineering track
+## What is Book Hub? ##
+It's a forum where book lovers can write their thoughs, recommendations, and even fanfictions of books they enjoy. 
 
-To contribute to this repo, refer to `CONTRIBUTING.md` file.
+## How to use Book Hub? ##
+### Create an account or log in ###
+
+### Browse existing entries ###
+
+### Create new entries ###
