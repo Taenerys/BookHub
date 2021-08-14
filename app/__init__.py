@@ -15,15 +15,15 @@ def create_app():
     app = Flask(__name__)
     app.config["SECRET_KEY"] = "development_key"
     app.config["SQLALCHEMY_DATABASE_URI"] = f"sqlite:///{DB_NAME}"
-    #app.config[
-       # "SQLALCHEMY_DATABASE_URI"
-    #] = "postgresql+psycopg2://{user}:{passwd}@{host}:{port}/{table}".format(
-       # user=os.getenv("POSTGRES_USER"),
-       # passwd=os.getenv("POSTGRES_PASSWORD"),
-       # host=os.getenv("POSTGRES_HOST"),
-       # port=5432,
-       # table=os.getenv("POSTGRES_DB"),
-    #)
+    # app.config[
+    # "SQLALCHEMY_DATABASE_URI"
+    # ] = "postgresql+psycopg2://{user}:{passwd}@{host}:{port}/{table}".format(
+    # user=os.getenv("POSTGRES_USER"),
+    # passwd=os.getenv("POSTGRES_PASSWORD"),
+    # host=os.getenv("POSTGRES_HOST"),
+    # port=5432,
+    # table=os.getenv("POSTGRES_DB"),
+    # )
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
     db.init_app(app)
 
@@ -52,6 +52,6 @@ def create_app():
 
 
 def create_database(app):
-   if not path.exists("app"+DB_NAME):
+    if not path.exists("app" + DB_NAME):
         db.create_all(app=app)
         print("Database initialized!")
