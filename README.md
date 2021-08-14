@@ -6,6 +6,7 @@ It's a forum where book lovers can write their thoughs, recommendations, and eve
 
 ## How to use Book Hub? ##
 ### Create an account or log in ###
+![image](https://user-images.githubusercontent.com/52259856/129430232-23824bb8-fc88-4975-a382-97a66e4c6c39.png)
 
 ### Browse existing entries ###
 
