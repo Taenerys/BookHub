@@ -39,7 +39,6 @@ def create_thoughts():
     return render_template("create-thought.html", user=current_user)
 
 
-# temporary endpoint just so we can see what the success page looks like
 @views.route("/success")
 def success():
     return render_template("success.html", user=current_user)
