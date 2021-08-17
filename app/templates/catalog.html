@@ -1,0 +1,18 @@
+{% extends 'index.html' %} {% block content %}
+
+<!-- Ugly temporary page for Dakshina and Emily to improve on -->
+
+<div class="bookContainer">
+    <div class="row">
+        {% for book in books %}
+        <div class="column">
+            <a href="/{{ book.id }}">
+                <img style=" width: 33.3%" alt="{{ book.img_name }}" src="{{ './static/images/' + book.img_name }}">
+              </a>
+            <p>{{ book.title }}</p>
+        </div>
+        {% endfor %}
+</div>
+
+{% endblock %}
+</div>
