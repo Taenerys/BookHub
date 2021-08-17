@@ -1,25 +1,47 @@
-{% extends 'index.html' %}
+{% extends 'index.html' %} {% block content %}
 
-{% block content %}
-<h1 style="text-align: center">Read, Write, and Connect</h1>
+<div class="container">
+  <h2>WRITE.</h2>
+  <h3>READ.</h3>
+  <h3>CONNECT.</h3>
+</div>
 
-<h3 style="text-align: center">Discover Books Below!</h3>
+<h5 style="text-align: center">DISCOVER HUNDREDS OF BOOKS.</h5>
 
-<!-- TODO: Make this page look better -->
+<h6 style="text-align: center">ALL IN ONE PLACE.</h6>
 
-<div class="bookContainer">
+<div class="floatingbook">
+  <img src="./static/images/floatingbook2.png" />
+  <img src="./static/images/floatingbook2.png" />
+  <img src="./static/images/floatingbook2.png" />
+  <img src="./static/images/floatingbook2.png" />
+  <img src="./static/images/floatingbook2.png" />
+  <img src="./static/images/floatingbook2.png" />
+  <img src="./static/images/floatingbook2.png" />
+</div>
+
+<!-- <div class="bookContainer">
   <div class="row">
     {% for book in books %}
     <div class="column">
+<<<<<<< HEAD
       <a href="/{{ book.id }}">
         <img style=" width: 33.3%" alt="{{ book.img_name }}" src="{{ './static/images/' + book.img_name }}">
       </a>
       <p>
         {{ book.title }}
       </p>
+=======
+      <img
+        src="{{ './static/images/' + book.img_name }}"
+        alt="{{ book.img_name }}"
+        style="width: 33.3%"
+      />
+      <p>{{ book.title }}</p>
+>>>>>>> a7f6d1528dba97c2a21a77e607669377b5556636
     </div>
     {% endfor %}
-  </div>
-</div>
+  </div> -->
 
-{% endblock %}
+  {% endblock %}
+</div>

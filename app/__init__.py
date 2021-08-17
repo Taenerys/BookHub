@@ -7,23 +7,23 @@ from flask_login import LoginManager
 # from flask_migrate import Migrate
 
 db = SQLAlchemy()
-# DB_NAME = "database.db"
+DB_NAME = "database.db"
 
 
 def create_app():
     # TODO: will store this key safely later & change it!
     app = Flask(__name__)
     app.config["SECRET_KEY"] = "development_key"
-    # app.config["SQLALCHEMY_DATABASE_URI"] = f"sqlite:///{DB_NAME}"
-    app.config[
-        "SQLALCHEMY_DATABASE_URI"
-    ] = "postgresql+psycopg2://{user}:{passwd}@{host}:{port}/{table}".format(
-        user=os.getenv("POSTGRES_USER"),
-        passwd=os.getenv("POSTGRES_PASSWORD"),
-        host=os.getenv("POSTGRES_HOST"),
-        port=5432,
-        table=os.getenv("POSTGRES_DB"),
-    )
+    app.config["SQLALCHEMY_DATABASE_URI"] = f"sqlite:///{DB_NAME}"
+    # app.config[
+    # "SQLALCHEMY_DATABASE_URI"
+    # ] = "postgresql+psycopg2://{user}:{passwd}@{host}:{port}/{table}".format(
+    # user=os.getenv("POSTGRES_USER"),
+    # passwd=os.getenv("POSTGRES_PASSWORD"),
+    # host=os.getenv("POSTGRES_HOST"),
+    # port=5432,
+    # table=os.getenv("POSTGRES_DB"),
+    # )
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
     db.init_app(app)
 
@@ -52,5 +52,6 @@ def create_app():
 
 
 def create_database(app):
-    db.create_all(app=app)
-    print("Database initialized!")
+    if not path.exists("app" + DB_NAME):
+        db.create_all(app=app)
+        print("Database initialized!")
