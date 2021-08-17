@@ -15,6 +15,7 @@ views = Blueprint("views", __name__)
 def health_check():
     return "This works!"
 
+
 @views.route("/catalog")
 def book_catalog():
     books = get_books()
@@ -26,14 +27,12 @@ def book_catalog():
             binary_file.write(book.img)
     return render_template("catalog.html", books=books, user=current_user)
 
+
 @views.route("/")
 @login_required
 def home():
     return render_template(
-        "home.html",
-        title="Book Hub",
-        url="localhost:5000",
-        user=current_user
+        "home.html", title="Book Hub", url="localhost:5000", user=current_user
     )
 
 
@@ -119,13 +118,14 @@ def get_book(id):
         return "Book not found"
     return render_template("book-details.html", book=curr_book, user=current_user)
 
+
 # TODO: Function to delete book
-@views.route("/delete", methods=['POST'])
+@views.route("/delete", methods=["POST"])
 def delete_book():
     # get the json response from the delete button
     book = json.loads(request.data)
     # get the book id
-    bookId = book['bookId']
+    bookId = book["bookId"]
     # use that book id to query the database
     book = Book.query.get(bookId)
 
