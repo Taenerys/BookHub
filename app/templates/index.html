@@ -34,6 +34,7 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
                 <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="/catalog">Catalog</a>
                 <a class="nav-item nav-link" href="/create">Start Writing</a>
                 <a class="nav-item nav-link" href="/auth/log-out">Logout</a>
             </div>
@@ -76,7 +77,10 @@
         made in 2021 for mlh production engineering track ❤️
     </div>
 
-    <!-- <footer>made in 2021 for mlh production engineering track ❤️</footer> -->
+    <script
+        type="text/javascript"
+        src="{{ url_for('static', filename='js/index.js') }}"
+    ></script>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">

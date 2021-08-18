@@ -3,16 +3,27 @@
 {% block content %}
 <div style="text-align: center" class="bookContainer">
     <h1>{{ book.title }}</h1>
+    <!-- Note: this Delete is super ugly so feel free to change the UI anyway you like!-->
+    <button type="button" class="close" onClick="deleteBook({{ book.id }})">
+        <span aria-hidden="true">Delete</span>
+    </button>
     <br>
     <div style="text-align: center">
         <img style=width:33.3% alt="{{ book.img_name }}" src="{{ './static/images/' + book.img_name }}">
     </div>
     <br>
     <br>
-    <h5>Author: {{ book.author }}</h5>
-    <h5>Tags: {{ book.tags }}</h5>
-    <h5>Notes: {{ book.notes }}</h5>
+    <!-- very ugly, needs redo-->
+    <h5>Date Added: {{ book.date_added }}</h5>
 
+    <h5>Author: {{ book.author }}</h5>
+
+    <!-- very ugly, needs redo-->
+    {% for tag in book.tags %}
+    <div><b>{{ tag.name }}</b></div>
+    {% endfor %}
+
+    <h5>Notes: {{ book.notes }}</h5>
 </div>
 
 {% endblock %}

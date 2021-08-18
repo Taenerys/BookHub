@@ -2,10 +2,11 @@ import os
 from os import path
 import app
 from app import db
-from flask import Blueprint, render_template, request
+from flask import Blueprint, render_template, request, jsonify
 from flask_login import login_required, current_user
 from .models import Book, Tag
 from werkzeug.utils import secure_filename
+import json
 
 views = Blueprint("views", __name__)
 
@@ -15,9 +16,8 @@ def health_check():
     return "This works!"
 
 
-@views.route("/")
-@login_required
-def home():
+@views.route("/catalog")
+def book_catalog():
     books = get_books()
     path = "app/static/images/"
     for book in books:
@@ -25,12 +25,14 @@ def home():
             # save files to images folder
             # TODO: is there a way to make images saved to server?
             binary_file.write(book.img)
+    return render_template("catalog.html", books=books, user=current_user)
+
+
+@views.route("/")
+@login_required
+def home():
     return render_template(
-        "home.html",
-        title="Book Hub",
-        url="localhost:5000",
-        books=books,
-        user=current_user,
+        "home.html", title="Book Hub", url="localhost:5000", user=current_user
     )
 
 
@@ -113,10 +115,27 @@ def get_books():
 def get_book(id):
     curr_book = Book.query.filter_by(id=id).first()
     if not curr_book:
-        return "book not found"
+        return "Book not found"
     return render_template("book-details.html", book=curr_book, user=current_user)
 
 
 # TODO: Function to delete book
+@views.route("/delete", methods=["POST"])
+def delete_book():
+    # get the json response from the delete button
+    book = json.loads(request.data)
+    # get the book id
+    bookId = book["bookId"]
+    # use that book id to query the database
+    book = Book.query.get(bookId)
+
+    # if we found the book with that id
+    if book:
+        # we check if the book's user id is the same as the current user id
+        if book.user_id == current_user.id:
+            db.session.delete(book)
+            db.session.commit()
+    return jsonify({})
+
 
 # TODO: Function to edit book
