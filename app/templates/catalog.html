@@ -2,6 +2,17 @@
 
 <!-- Ugly temporary page for Dakshina and Emily to improve on -->
 
+<div class="search-tag">
+    <div class="child-search-tag">
+        <form action="/search" class="form-inline md-form mr-auto mb-4" method="POST">
+            <input class="form-control mr-sm-2" type="text" name="tag" placeholder="Search tag" aria-label="SearchTag">
+            <button class="btn btn-elegant btn-rounded btn-sm my-0" type="submit">Search</button>
+        </form>
+    </div>
+</div>
+
+<br>
+
 <div class="bookContainer">
     <div class="row">
         {% for book in books %}

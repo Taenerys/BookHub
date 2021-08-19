@@ -1,6 +1,5 @@
-import os
 from os import path
-from flask import Flask, request, render_template, flash, url_for, redirect
+from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 
