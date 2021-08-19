@@ -8,7 +8,6 @@ tag_book = db.Table(
     db.Column("book_id", db.Integer, db.ForeignKey("book.id"), primary_key=True),
 )
 
-
 class Book(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(10000), nullable=False)
