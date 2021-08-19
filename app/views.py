@@ -12,6 +12,7 @@ views = Blueprint("views", __name__)
 def health_check():
     return "This works!"
 
+
 @views.route("/catalog")
 def book_catalog():
     books = get_books()
@@ -105,6 +106,7 @@ def process_form_data(value_form):
 def get_books():
     return Book.query.order_by(Book.date_added).all()
 
+
 @views.route("/<int:id>")
 def get_book(id):
     curr_book = Book.query.filter_by(id=id).first()
@@ -130,12 +132,14 @@ def delete_book():
             db.session.commit()
     return jsonify({})
 
-@views.route("/search", methods=['GET', 'POST'])
+
+@views.route("/search", methods=["GET", "POST"])
 def search_book():
-    if request.method == 'POST':
+    if request.method == "POST":
         data = request.form.get("tag")
         print(data)
         filtered_books = Book.query.filter(Book.tags.any(Tag.name.contains(data))).all()
     return render_template("catalog.html", books=filtered_books, user=current_user)
+
 
 # TODO: Function to edit book
