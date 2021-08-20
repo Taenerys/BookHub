@@ -143,13 +143,13 @@ h6 {
 }
 
 .tag {
-  background-color  : lightgray;
+  background-color: lightgray;
   display: flex;
 }
 
 .bookImage {
-  float: left; 
-  padding-left: 50px
+  float: left;
+  padding-left: 50px;
 }
 
 .column {
@@ -187,4 +187,10 @@ h6 {
 .search-tag {
   display: flex;
   justify-content: center;
+}
+
+.container > img {
+  float: right;
+  padding-bottom: 200px;
+  padding-top: 50px;
 }
