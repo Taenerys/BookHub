@@ -28,7 +28,7 @@ A place where we can add and track our book notes for our reading journey.
 ### Create new entries
 
 Click on "start writing" on the top right corner to recommend a new book!
-![image](https://user-images.githubusercontent.com/52259856/129430715-c7c2c4e2-9dc2-4202-9de9-171b191bf365.png)
+<img width="456" alt="Screen Shot 2021-08-20 at 11 20 05 AM" src="https://user-images.githubusercontent.com/70316484/130277016-95766672-6f55-44b8-a857-f8177577a846.png">
 
 Enter your book details here...
 ![image](https://user-images.githubusercontent.com/52259856/129430725-f5ac6d44-5d50-43bf-ab28-6688dbf30bc5.png)
