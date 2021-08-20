@@ -86,9 +86,29 @@ After you click "submit" this page will show up to confirm a successful upload
 
 ## Challenges we ran into 🥺
 
+- One major problem that we have is time: a lot of our team members have many commitments outside of the fellowship, therefore finding time to sync up was difficult for all of us. 
+- AWS instance often hanging very slowly, causing us having to debug in a lot of ways: rebooting the AWS instance, checking top, changing the instance type from t2.micro to t2.small
+- While collaborating together and working in parallel, there were often git conflicts which were difficult to merge. 
+- All of us are not masters at front end development, so we ran into quite a lot of issues with CSS.
+
 ## Accomplishments that we're proud of 🥰
 
+- Despite the time commitment issues, we were able to create a final deliverable at the end and learnt a lot in the process.
+- We built a project from scratch, starting from coming up with an idea, designing, executing things until we were able to deploy it and employed testing, CI/CD and monitoring tools in a span of three weeks.
+- We have a great teamwork - unexpected things happen, but no one is blamed and we keep moving forward and working together to find a solution.
+- We built off of the feedbacks we received from our Pod Leader and our Pod mates for the past weeks. We demonstrated great Git best practices throughout the process (Project Board, Issues, Pull Requests, README.md, Code Review, etc.)
+- Resolved a lot of git merge conflicts!
+- We made a great README.md that we are very proud of!
+
 ## What we learned 💡
+
+- Learnt more ways of using Flask for a full-fledged project.
+- Acting as a Project Manager: deciding the direction of the project, assigning tasks, holding meetings, taking notes, being encouraging, etc.
+- Using Production Engineering skills we learnt in the MLH's PE Fellowship in a real world project from start to finish.
+- Debugging on Linux, especially on an AWS EC2 instance.
+- Good GitHub practices.
+- Good collaboration between teammates.
+- Never afraid to ask questions / for help.
 
 ## What's next for Book Hub 🤫
 
