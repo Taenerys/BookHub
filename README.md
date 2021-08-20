@@ -1,10 +1,26 @@
 <img alt="Book Hub GIF" src="./book-hub-home.gif">
+By Anh Pham, Emily Xinyi, Kweku Aboagye and Dakshina Palasamudrum.
+**Deployed Project Link: https://book-hub.tech**
 
 <br />
 
 # Book Hub 📚
 
 A place where we can add and track our book notes for our reading journey.
+
+## Table of Contents 🗺️
+
+- [Inspiration 🧠](https://github.com/Taenerys/BookHub#inspiration-)
+- [What it does 🤔](https://github.com/Taenerys/BookHub#what-it-does-)
+- [How to use 👍](https://github.com/Taenerys/BookHub#how-to-use-book-hub-)
+- [How we built it 💪](https://github.com/Taenerys/BookHub#how-we-built-it-)
+- [Architecture 🐙](https://github.com/Taenerys/BookHub#architecture-)
+- [Accomplishments 🥺](https://github.com/Taenerys/BookHub#accomplishments-that-were-proud-of-)
+- [What we learned 💡](https://github.com/Taenerys/BookHub#what-we-learned-)
+- [Next Steps 🤫](https://github.com/Taenerys/BookHub#whats-next-for-book-hub-)
+- [MLH Fellowship - Production Engineering Track ( Summer 2021) ⭐](https://github.com/Taenerys/BookHub#mlh-fellowship---production-engineering-track--summer-2021-)
+- [Team 🧑‍🤝‍🧑](https://github.com/Taenerys/BookHub#team-)
+- [Contributors ✨](https://github.com/Taenerys/BookHub#contributors-)
 
 ## Inspiration 🧠
 
@@ -56,6 +72,7 @@ After you click "submit" this page will show up to confirm a successful upload
 - **CI/CD Workflow**: Github Actions
 - **Monitoring**: cAdvisor, Prometheus, Grafana
 - **Version Control**: Git and GitHub
+- **Reverse Proxy**: NGINX
 
 ## Architecture 🐙
 
