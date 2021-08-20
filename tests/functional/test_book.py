@@ -1,5 +1,6 @@
 from app import create_app
 
+
 def test_home_page():
     """
     GIVEN a Flask application configured for testing
@@ -10,11 +11,12 @@ def test_home_page():
 
     # create a test client using the Flask app configured for testig
     with flask_app.test_client() as test_client:
-        response = test_client.get('/auth/login?next=%2F')
+        response = test_client.get("/auth/login?next=%2F")
         assert response.status_code == 200
         # assert b"Welcome to Book Hub!" in response.data
         # assert b"Needs an account?" in response.data
         # assert b"Existing user?" in response.data
+
 
 def test_home_page_post():
     """
@@ -24,7 +26,7 @@ def test_home_page_post():
     """
     flask_app = create_app()
 
-    #Create a test client using the Flask application configured for testing
+    # Create a test client using the Flask application configured for testing
     with flask_app.test_client() as test_client:
-        response = test_client.post('/')
+        response = test_client.post("/")
         assert response.status_code == 405
