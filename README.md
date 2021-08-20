@@ -1,5 +1,6 @@
 <img alt="Book Hub GIF" src="./book-hub-home.gif">
 By Anh Pham, Emily Xinyi, Kweku Aboagye and Dakshina Palasamudrum.
+
 **Deployed Project Link: https://book-hub.tech**
 
 <br />
