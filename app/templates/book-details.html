@@ -1,32 +1,32 @@
 {% extends 'index.html' %} {% block content %}
 <div class="bookContainer">
-    <h1 style="text-align: center">{{ book.title }}</h1>
+  <h1 style="text-align: center">{{ book.title }}</h1>
 
-    <div class="row">
-        <div class="column">
-            <img class="bookImage" style=width:80% alt="{{ book.img_name }}"
-                src="{{ './static/images/' + book.img_name }}">
-        </div>
-        <div class="column">
-            <h5>Author: {{ book.author }}</h5>
-            <div class="tags">
-                <b>Tags: </b>
-                {% for tag in book.tags %}
-                <mark>{{ tag.name }}</mark>
-                {% endfor %}
-            </div>
-            <P> <b>Notes:</b> {{ book.notes }}</P>
-            <p><b>Date Added: {{ book.date_added }}</b></p>
-
-            <button type="button" onClick="deleteBook({{ book.id }})">
-                <span aria-hidden="true">Delete</span>
-            </button>
-        </div>
-
-
+  <div class="row-book">
+    <div class="column-book">
+      <img
+        class="bookImage"
+        style="width: 80%"
+        alt="{{ book.img_name }}"
+        src="{{ './static/images/' + book.img_name }}"
+      />
     </div>
+    <div class="column-book">
+      <h5>Author: {{ book.author }}</h5>
+      <div class="tags">
+        <b>Tags: </b>
+        {% for tag in book.tags %}
+        <mark>{{ tag.name }}</mark>
+        {% endfor %}
+      </div>
+      <p><b>Notes:</b> {{ book.notes }}</p>
+      <p><b>Date Added: {{ book.date_added }}</b></p>
 
-
+      <button type="button" onClick="deleteBook({{ book.id }})">
+        <span aria-hidden="true">Delete</span>
+      </button>
+    </div>
+  </div>
 </div>
 
 {% endblock %}
