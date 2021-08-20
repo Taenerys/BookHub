@@ -2,6 +2,21 @@
 
 <!-- Ugly temporary page for Dakshina and Emily to improve on -->
 
+<<<<<<< HEAD
+<div class="bookContainer">
+    <div class="row">
+        {% for book in books %}
+        <div class="column">
+            <a href="/{{ book.id }}">
+                <img style=" width: 33.3%" alt="{{ book.img_name }}" src="{{ './static/images/' + book.img_name }}">
+            </a>
+            <p>{{ book.title }}</p>
+        </div>
+        {% endfor %}
+    </div>
+
+
+=======
 <div class="search-tag">
   <div class="child-search-tag">
     <form
@@ -42,4 +57,6 @@
   </div>
 
   {% endblock %}
+>>>>>>> 45af70771bd1e37c43a57e72254ad7bd450ef6bf
 </div>
+{% endblock %}

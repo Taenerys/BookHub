@@ -142,6 +142,28 @@ h6 {
   bottom: 0;
 }
 
+.tag {
+  background-color  : lightgray;
+  display: flex;
+}
+
+.bookImage {
+  float: left; 
+  padding-left: 50px
+}
+
+.column {
+  float: left;
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 @keyframes book {
   0% {
     transform: translateY(0);
