@@ -38,7 +38,7 @@ Books are uploaded on a catalog
 <img width="1429" alt="Screen Shot 2021-08-20 at 10 37 16 AM" src="https://user-images.githubusercontent.com/70316484/130275849-ae5f725d-fc69-4925-92e7-5887f6e14ef6.png">
 
 After you click "submit" this page will show up to confirm a successful upload
-![image](https://user-images.githubusercontent.com/52259856/129430794-b1b43111-0bc7-42f1-8a25-5db1305a0dcd.png)
+<img width="1438" alt="Screen Shot 2021-08-20 at 11 23 39 AM" src="https://user-images.githubusercontent.com/70316484/130277371-fd2f2c6e-83ff-4ba0-be37-cbd06a094bb5.png">
 
 ## How we built it
 
