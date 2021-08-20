@@ -33,6 +33,9 @@ Click on "start writing" on the top right corner to recommend a new book!
 Enter your book details here...
 ![image](https://user-images.githubusercontent.com/52259856/129430725-f5ac6d44-5d50-43bf-ab28-6688dbf30bc5.png)
 
+Books are uploaded on a catalog
+<img width="1429" alt="Screen Shot 2021-08-20 at 10 37 16 AM" src="https://user-images.githubusercontent.com/70316484/130275849-ae5f725d-fc69-4925-92e7-5887f6e14ef6.png">
+
 After you click "submit" this page will show up to confirm a successful upload
 ![image](https://user-images.githubusercontent.com/52259856/129430794-b1b43111-0bc7-42f1-8a25-5db1305a0dcd.png)
 
