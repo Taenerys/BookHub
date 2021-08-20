@@ -1,4 +1,4 @@
-<img width="600" height="700" alt="Book Hub GIF" src="./book-hub-home.gif">
+<img width="680" height="600" alt="Book Hub GIF" src="./book-hub-home.gif">
 
 <br /><br />
 
