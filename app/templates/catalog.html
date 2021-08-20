@@ -3,27 +3,43 @@
 <!-- Ugly temporary page for Dakshina and Emily to improve on -->
 
 <div class="search-tag">
-    <div class="child-search-tag">
-        <form action="/search" class="form-inline md-form mr-auto mb-4" method="POST">
-            <input class="form-control mr-sm-2" type="text" name="tag" placeholder="Search tag" aria-label="SearchTag">
-            <button class="btn btn-elegant btn-rounded btn-sm my-0" type="submit">Search</button>
-        </form>
-    </div>
+  <div class="child-search-tag">
+    <form
+      action="/search"
+      class="form-inline md-form mr-auto mb-4"
+      method="POST"
+    >
+      <input
+        class="form-control mr-sm-2"
+        type="text"
+        name="tag"
+        placeholder="Search tag"
+        aria-label="SearchTag"
+      />
+      <button class="btn btn-elegant btn-rounded btn-sm my-0" type="submit">
+        Search
+      </button>
+    </form>
+  </div>
 </div>
 
-<br>
+<br />
 
 <div class="bookContainer">
-    <div class="row">
-        {% for book in books %}
-        <div class="column">
-            <a href="/{{ book.id }}">
-                <img style=" width: 33.3%" alt="{{ book.img_name }}" src="{{ './static/images/' + book.img_name }}">
-              </a>
-            <p>{{ book.title }}</p>
-        </div>
-        {% endfor %}
-</div>
+  <div class="row">
+    {% for book in books %}
+    <div class="column">
+      <a href="/{{ book.id }}">
+        <img
+          style="width: 40%"
+          alt="{{ book.img_name }}"
+          src="{{ './static/images/' + book.img_name }}"
+        />
+      </a>
+      <p>{{ book.title }}</p>
+    </div>
+    {% endfor %}
+  </div>
 
-{% endblock %}
+  {% endblock %}
 </div>
