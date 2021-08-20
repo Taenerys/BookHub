@@ -21,7 +21,7 @@ A place where we can add and track our book notes for our reading journey.
 
 ### Create an account or log in
 
-![image](https://user-images.githubusercontent.com/52259856/129430232-23824bb8-fc88-4975-a382-97a66e4c6c39.png)
+<img width="1438" alt="Screen Shot 2021-08-20 at 11 18 15 AM" src="https://user-images.githubusercontent.com/70316484/130276825-6b97b9ed-522c-4c56-a5ea-35480ed8f0cc.png">
 
 ### Browse existing entries
 
