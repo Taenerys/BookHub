@@ -8,11 +8,12 @@
         <div class="column">
             <a href="/{{ book.id }}">
                 <img style=" width: 33.3%" alt="{{ book.img_name }}" src="{{ './static/images/' + book.img_name }}">
-              </a>
+            </a>
             <p>{{ book.title }}</p>
         </div>
         {% endfor %}
-</div>
+    </div>
 
-{% endblock %}
+
 </div>
+{% endblock %}
