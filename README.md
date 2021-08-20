@@ -1,6 +1,6 @@
 <img width="700" height="600" alt="Book Hub GIF" src="./book-hub-home.gif">
 
-<br /><br />
+<br />
 
 # Book Hub
 
