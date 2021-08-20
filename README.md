@@ -16,7 +16,7 @@ A place where we can add and track our book notes for our reading journey.
 - [How to use 👍](https://github.com/Taenerys/BookHub#how-to-use-book-hub-)
 - [How we built it 💪](https://github.com/Taenerys/BookHub#how-we-built-it-)
 - [Architecture 🐙](https://github.com/Taenerys/BookHub#architecture-)
-- [CI/CD Workflow 🧪](https://github.com/Taenerys/BookHub#architecture-)
+- [CI/CD Workflow 🧪](https://github.com/Taenerys/BookHub#cicd-workflow-)
 - [Accomplishments 🥺](https://github.com/Taenerys/BookHub#accomplishments-that-were-proud-of-)
 - [What we learned 💡](https://github.com/Taenerys/BookHub#what-we-learned-)
 - [Next Steps 🤫](https://github.com/Taenerys/BookHub#whats-next-for-book-hub-)
