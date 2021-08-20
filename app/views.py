@@ -1,6 +1,3 @@
-import os
-from os import path
-import app
 from app import db
 from flask import Blueprint, render_template, request, jsonify
 from flask_login import login_required, current_user
@@ -110,7 +107,6 @@ def get_books():
     return Book.query.order_by(Book.date_added).all()
 
 
-# TODO: Fucntion to get an individual book to display the detail for each
 @views.route("/<int:id>")
 def get_book(id):
     curr_book = Book.query.filter_by(id=id).first()
@@ -119,7 +115,6 @@ def get_book(id):
     return render_template("book-details.html", book=curr_book, user=current_user)
 
 
-# TODO: Function to delete book
 @views.route("/delete", methods=["POST"])
 def delete_book():
     # get the json response from the delete button
@@ -136,6 +131,15 @@ def delete_book():
             db.session.delete(book)
             db.session.commit()
     return jsonify({})
+
+
+@views.route("/search", methods=["GET", "POST"])
+def search_book():
+    if request.method == "POST":
+        data = request.form.get("tag")
+        print(data)
+        filtered_books = Book.query.filter(Book.tags.any(Tag.name.contains(data))).all()
+    return render_template("catalog.html", books=filtered_books, user=current_user)
 
 
 # TODO: Function to edit book
