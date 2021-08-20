@@ -3,6 +3,8 @@ By Anh Pham, Emily Xinyi, Kweku Aboagye and Dakshina Palasamudrum.
 
 **Deployed Project Link: https://book-hub.tech**
 
+[![License](https://img.shields.io/github/license/Taenerys/BookHub)](https://github.com/Taenerys/BookHub/blob/main/LICENSE)
+
 <br />
 
 # Book Hub 📚
