@@ -80,15 +80,30 @@ After you click "submit" this page will show up to confirm a successful upload
 
 ## Architecture 🐙
 
-(diagram pictures)
+We aim to have a highly modularized architecture, where every service has its own container and is independent from the others.
+
+BookHub has 6 containers for 6 services:
+
+- web: client code / front end
+- db: database (SQLite3)
+- nginx: reverse proxy
+- cadvisor: monitoring tool 1
+- prometheus: monitoring tool 2
+- grafana: monitoring tool 3
+
+![architecture](https://user-images.githubusercontent.com/35150672/130304480-28e9b998-dfb2-4919-82de-d4da9a258bb5.jpeg)
 
 ## CI/CD Workflow 🧪
 
+Book Hub also has a full Continuous Integrationn and Delivery System.
+
+![ci-cd](https://user-images.githubusercontent.com/35150672/130304486-52128f4d-fb1f-4207-8fb0-ca6f07af8ad2.jpeg)
+
 ## Challenges we ran into 🥺
 
-- One major problem that we have is time: a lot of our team members have many commitments outside of the fellowship, therefore finding time to sync up was difficult for all of us. 
+- One major problem that we have is time: a lot of our team members have many commitments outside of the fellowship, therefore finding time to sync up was difficult for all of us.
 - AWS instance often hanging very slowly, causing us having to debug in a lot of ways: rebooting the AWS instance, checking top, changing the instance type from t2.micro to t2.small
-- While collaborating together and working in parallel, there were often git conflicts which were difficult to merge. 
+- While collaborating together and working in parallel, there were often git conflicts which were difficult to merge.
 - All of us are not masters at front end development, so we ran into quite a lot of issues with CSS.
 
 ## Accomplishments that we're proud of 🥰
